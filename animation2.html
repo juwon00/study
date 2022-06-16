@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Interactive Web</title>
+
+    <style>
+
+      body{
+        background: #222;
+      }
+
+      @keyframes calendar-ani {
+        /* 시작은 from 또는 0%, 끝은 to 또는 100%로 쓸 수 있다. */
+        100%{
+          background-position: -972px 0;
+        }
+      }
+
+      .calendar{
+        width: 150px;
+        height: 150px;
+        background: url('../images/3d_calendar.png') no-repeat 0 0 / auto 150px;
+        animation: calendar-ani 0.7s infinite reverse steps(6);
+      }
+
+    </style>
+
+
+</head>
+<body>
+  <div class="calendar"></div>
+</body>
+</html>

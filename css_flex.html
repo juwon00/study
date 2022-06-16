@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Interactive Web</title>
+
+
+
+  <style>
+    .container{
+      display: flex; /* 부모에게 속성을 줌, grid와 flex의 차이점 grid는 축이 세로 가로 둘다, flex는 축이 가로 또는 세로 */
+      flex-direction: row; /* 축의 방향은 어묵 꼬지로 생각하면 쉽다, row가 기본속성 */
+      justify-content: flex-start; /* 어묵을 축 위에서 움직이게 하는속성, flex-start가 기본 속성 */
+      align-items: stretch; /* 어묵을 꼬지의 수직인 방향으로 늘려주는 속성, stretch가 기본 속성 */
+      height: 80vh;
+      background: gray;
+    }
+
+    .item{
+      /* flex-grow: 1;  각각의 컨텐츠의 여백을 나눠 가지는 속성, shrink와 일반적으로 동일한 숫자를 씀
+      flex-basis: auto;  각각의 컨텐츠의 크기비율에 따라 나눠가지는 속성, auto가 기본속성이지만 축약형에서는 0이 기본 */
+      flex: 1;
+      border: 3px solid black;
+      font-size: 3rem;
+      background: white;
+    }
+
+    /* .item:nth-child(1){ flex-grow: 1; }
+    .item:nth-child(2){ flex-grow: 5; }
+    .item:nth-child(3){ flex-grow: 2; }
+    .item:nth-child(4){ flex-grow: 3; }
+    .item:nth-child(5){ flex-grow: 1; } */
+
+  </style>
+
+
+</head>
+<body>
+  <div class="container">
+    <div class="item">AAA</div>
+    <div class="item">B</div>
+    <div class="item">CCCCCC</div>
+    <div class="item">DDD</div>
+    <div class="item">E</div>
+  </div>
+
+</body>
+</html>

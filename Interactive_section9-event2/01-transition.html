@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Transition/Animation Event</title>
+
+  <style>
+  .ball {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    /* margin: -15px 0 0 -15px; 이방법도 공을 중앙에 오게 할 수 있음 */
+    border-radius: 50%;
+    background: red;
+    transition: 2s;
+  }
+  .ball.end {
+    background: dodgerblue;
+  }
+  </style>
+
+</head>
+<body>
+
+  <div class="ball"></div>
+
+
+  <script>
+  const ballElem = document.querySelector('.ball');
+
+  window.addEventListener('click', function (e) {
+    ballElem.style.transform = 'translate(' + (e.clientX - 15) + 'px, ' + (e.clientY - 15) + 'px)';
+  });
+                          // transitionend는 끝날때 start는 시작하자마자 바뀜
+  ballElem.addEventListener('transitionend', function (e) {
+    ballElem.classList.add('end');
+    console.log(e.elapsedTime); // transition의 duration이 출력됨
+    console.log(e.propertyName); // translate의 transform이 바뀌고 end class가 추가됨
+  });
+
+  //transitionend
+  //transitionstart
+
+  </script>
+
+
+</body>
+</html>
